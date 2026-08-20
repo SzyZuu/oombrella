@@ -33,8 +33,8 @@ public class OombrellaHelmetItem extends ArmorItem implements GeoItem {
             ItemStack stack, Level level, List<Component> tooltip, TooltipFlag flag
     ){
         tooltip.add(
-                Component.translatable("tooltip.oombrella_helmet")
-                        .withStyle(ChatFormatting.GRAY)
+                Component.translatable("tooltip.oombrella.oombrella_helmet")
+                        .withStyle(ChatFormatting.YELLOW)
         );
         super.appendHoverText(stack, level, tooltip, flag);
     }

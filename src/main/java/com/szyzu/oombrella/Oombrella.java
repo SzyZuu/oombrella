@@ -1,7 +1,9 @@
 package com.szyzu.oombrella;
 
 import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -9,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
 @Mod(Oombrella.MODID)
 public class Oombrella
@@ -18,12 +21,13 @@ public class Oombrella
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
 
-    /*public static final RegistryObject<CreativeModeTab> EXAMPLE_TAB = CREATIVE_MODE_TABS.register("example_tab", () -> CreativeModeTab.builder()
+    public static final RegistryObject<CreativeModeTab> OOMBRELLA_TAB = CREATIVE_MODE_TABS.register("oombrella_tab", () -> CreativeModeTab.builder()
             .withTabsBefore(CreativeModeTabs.COMBAT)
-            .icon(() -> OOMBRELLA_ITEM.get().getDefaultInstance())
+            .icon(() -> ModItems.OOMBRELLA_HELMET.get().getDefaultInstance())
+            .title(Component.translatable("creativetab.oombrella"))
             .displayItems((parameters, output) -> {
-                output.accept(OOMBRELLA_ITEM.get());
-            }).build());*/
+                output.accept(ModItems.OOMBRELLA_HELMET.get());
+            }).build());
 
     public Oombrella(FMLJavaModLoadingContext context)
     {
